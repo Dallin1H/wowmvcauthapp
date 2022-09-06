@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/bde835f313.js" crossorigin="anonymous"></script>
+    <script defer src="js/main.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Horde</title>
+</head>
+<body>
+    <h1>Horde</h1>
+    <ul>
+       <% entries.forEach( e => { %>
+            <li class='entry' data-id='<%=e._id%>'>
+                <span title='<%= e.fake === true ? 'This entry has been marked as fake' : 'Click to mark as fake' %> 'class='<%= e.fake === true ? 'fake' : 'not-fake'%>'> <%= e.entry %></span>
+                <span title="Entry submitted by <%= e.userName %>"><%= e.userName %></span>
+                <span class='del'> <i class="fa-solid fa-trash-can"> </i> </span>
+            </li>
+       <% }) %>
+    </ul>
+
+    <form action="/horde/hordeEntry" method="POST">
+        <input type="text" name="entry" id="horde-input" placeholder="Make Entry">
+        <button>submit</button>
+    </form>
+
+    <span><a href="/home">Go Home</a></span>
+    <span><a href="/alliance">Go to the Alliance</a></span>
+
+    <a href="/logout">Logout</a>
+
+</body>
+</html>

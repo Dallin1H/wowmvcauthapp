@@ -1,5 +1,5 @@
 # MVC Project With Authentication
-A quick project I made using an MVC architectural style with user authentication using Passport.js in node.
+A small project I made using an MVC architectural style with user authentication using Passport.js in node.
 
 ## How It's Made:
 Tech used: EJS, CSS, JavaScript, Node.js, MongoDB

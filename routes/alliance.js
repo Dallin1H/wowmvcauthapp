@@ -1,8 +1,9 @@
 const express = require('express')
 const router = express.Router()
 const allianceController = require('../controllers/alliance')
+const { ensureAuth, ensureGuest } = require('../middleware/auth')
 
-router.get('/', allianceController.getAlliance)
+router.get('/', ensureAuth, allianceController.getAlliance)
 
 router.post('/allianceEntry', allianceController.createEntry)
 

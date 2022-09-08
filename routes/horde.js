@@ -1,8 +1,9 @@
 const express = require('express')
 const router = express.Router()
 const hordeController = require('../controllers/horde')
+const { ensureAuth, ensureGuest } = require('../middleware/auth')
 
-router.get('/', hordeController.getHorde)
+router.get('/', ensureAuth, hordeController.getHorde)
 
 router.post('/hordeEntry', hordeController.createEntry)
 
